@@ -1,0 +1,42 @@
+﻿@model List<CoreTask3.Models.Product>
+@{
+    Layout = null;
+}
+<h1>Ürünler</h1>
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Adı</th>
+            <th>Qiymeti</th>
+            <th>Endirimi</th>
+            <th>EDV</th>
+            <th>Toplam qiymet</th>
+            <th>Miqdari</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Id</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.DiscountedPrice</td>
+
+                <td>@product.EDV</td>
+                <td>@product.Total</td>
+                <td>@product.Quantity</td>
+                <td><a href="/Sale/Buy?id=@product.Id">Satın Al</a></td>
+            </tr>
+
+
+          
+              
+        }
+    </tbody>
+</table> 

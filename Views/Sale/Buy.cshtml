@@ -1,0 +1,25 @@
+﻿@model Product
+
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<h3>Cek №4521785</h3>
+
+<p>Adi: @Model.Name</p>
+<p>Qiymet: @Model.Price</p>
+<p>Miqdar: @Model.Quantity</p>
+<p>Endirim: @Model.DiscountedPrice</p>
+<p>EDV: @Model.EDV</p> 
+@{
+
+    DateTime currentTime = (DateTime)ViewData["CurrentTime"];
+
+    <p>Tarix: @currentTime.ToString("yyyy-MM-dd")</p>
+}
+<p>Toplam: @Model.Total</p>
+
+<h3>Odenis novunu secin</h3>
+<a href="/Sale/Cart"class="btn btn-info">Kartla</a>
+<a href="/Sale/Cash"class="btn btn-info">Nagd</a>
+
